@@ -13,6 +13,7 @@ app.get('/items', getItems);
 app.post('/items', addItem);
 app.put('/items/:id', updateItem);
 app.delete('/items/:id', deleteItem);
+app.get('/health', (req, res) => res.json({ status: 'ok'}));
 
 db.init().then(() => {
     app.listen(3000, () => console.log('Listening on port 3000'));
